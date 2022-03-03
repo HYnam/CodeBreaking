@@ -13,14 +13,14 @@ message = "Zyp cpxpxmpc ez wzzv fa le esp delcd lyo yze ozhy le jzfc qppe Ehz yp
 
 #frequency of each letter
 letter_counts = Counter(message)
-#print(letter_counts)
+print(letter_counts)    # Print the count of each element in string
 
 #find max letter
 maxFreq = -1
 maxLetter = None
 for letter, freq in letter_counts.items(): 
     print(letter, ":", freq) 
-    maxLetter = max(letter_counts, key = letter_counts.get)  #INSERT CODE TO REMEMBER MAX
+    maxLetter = max(letter_counts, key = letter_counts.get)  # Find max freq letter in the string 
 print("Max Ocurring Letter:", maxLetter)
 
 #predict shift
