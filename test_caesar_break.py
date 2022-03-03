@@ -20,7 +20,7 @@ maxFreq = -1
 maxLetter = None
 for letter, freq in letter_counts.items(): 
     print(letter, ":", freq) 
-    #INSERT CODE TO REMEMBER MAX
+    maxLetter = max(letter_counts, key = letter_counts.get)  #INSERT CODE TO REMEMBER MAX
 print("Max Ocurring Letter:", maxLetter)
 
 #predict shift
