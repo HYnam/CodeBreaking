@@ -24,7 +24,7 @@ for letter, freq in letter_counts.items():
 print("Max Ocurring Letter:", maxLetter)
 
 #predict shift
-#assume max letter is 'e'
+maxLetter = "e"     #assume max letter is 'e'
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 shift = #COMPUTE SHIFT HERE
 print("Predicted Shift:", shift)
