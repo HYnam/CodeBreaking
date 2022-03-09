@@ -18,10 +18,12 @@ print(letter_counts)    # Print the count of each element in string
 #find max letter
 maxFreq = -1
 maxLetter = None
+del letter_counts[' ']  # Don't count spaces 
 for letter, freq in letter_counts.items(): 
     print(letter, ":", freq) 
     maxLetter = max(letter_counts, key = letter_counts.get)  # Find max freq letter in the string 
 print("Max Ocurring Letter:", maxLetter)
+
 
 #predict shift
 maxLetter = "e"     #assume max letter is 'e'
