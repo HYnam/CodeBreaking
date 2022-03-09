@@ -20,12 +20,19 @@ offset = 5 #choose your shift
 totalLetters = 26
 keys = {} #use dictionary for letter mapping
 invkeys = {} #use dictionary for inverse letter mapping, you could use inverse search from original dict
+
 for index, letter in enumerate(letters):
     # cypher setup
+    letter = letters[index]
+    keys[letter] = letters[index]
+    print(letters[index] + ":" + keys[letter])
+print(keys)
+
+"""
     if index < totalLetters: #lowercase
-        #INSERT CODE HERE
+         
     else: #uppercase
-        #INSERT CODE HERE
+         
 print("Cypher Dict:", keys)
 
 #encrypt
@@ -45,3 +52,4 @@ for letter in encryptedMessage:
     else:
         decryptedMessage.append(invkeys[letter])
 print("Decrypted Message:", ''.join(decryptedMessage)) #join is used to put list inot string
+"""
