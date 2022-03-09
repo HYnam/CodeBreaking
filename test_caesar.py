@@ -28,10 +28,10 @@ for index, letter in enumerate(letters):
         keys[letter] = letters[(index + offset) % 26]
         print(letters[index] + ":" + keys[letter])
     else: #uppercase
-        print("Hi")
+        letter = letters.isupper()
+        keys[letter] = letters[(index + offset) % 26]
+        print(letters[index] + ":" + keys[letter])
        
-
-
 
 #encrypt
 encryptedMessage = []
