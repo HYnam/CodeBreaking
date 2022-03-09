@@ -25,6 +25,7 @@ for letter, freq in letter_counts.items():
 print("Max Ocurring Letter:", maxLetter)
 
 
+#right shift for encrypting and left shift for descripting.
 #predict shift
 maxLetter = "e"     #assume max letter is 'e'
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
