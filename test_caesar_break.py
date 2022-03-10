@@ -18,7 +18,7 @@ print(letter_counts)    # Print the count of each element in string
 #find max letter
 maxFreq = -1
 maxLetter = None
-del letter_counts[' ']  # Don't count spaces 
+letter_counts[' '] = 0  # Don't count spaces zero count
 for letter, freq in letter_counts.items(): 
     print(letter, ":", freq) 
     maxLetter = max(letter_counts, key = letter_counts.get)  # Find max freq letter in the string 
@@ -27,7 +27,45 @@ print("Max Ocurring Letter:", maxLetter)
 
 #right shift for encrypting and left shift for descripting.
 #predict shift
-maxLetter = "e"     #assume max letter is 'e'
+#assume max letter is 'e'
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-shift = #COMPUTE SHIFT HERE
+shift = 15  #COMPUTE SHIFT HERE (hardcode)
 print("Predicted Shift:", shift)
+
+totalLetters = 26
+keys = {} #use dictionary for letter mapping
+invkeys = {} #use dictionary for inverse letter mapping, you could use inverse search from original dict
+
+for index, letter in enumerate(letters):
+    # cypher setup
+    if index < totalLetters: #lowercase
+        # Dictionary for encryption 
+        letter = letters[index]
+        keys[letter] = letters[(index + shift) % 26]
+        # Dictionary for decryption 
+        invkeys = {val: key for key, val in keys.items()}
+    else: #uppercase
+        # Dictionary for encryption 
+        keys[letter] = letters[(index + shift) % 26 + 26]
+        # Dictionary for decryption
+        invkeys = {val: key for key, val in keys.items()}
+print("Cypher Dict", keys)
+
+#decrypt
+decryptedMessage = []
+for letter in message:
+    if letter == ' ': #spaces
+        decryptedMessage.append(letter)
+    else:
+        decryptedMessage.append(keys[letter])
+print("Decrypted Message:", ''.join(decryptedMessage)) #join is used to put list inot string
+
+# Checking if message is the same as the encrypt message provided 
+#Encrypt
+encryptedMessage = []
+for letter in decryptedMessage:
+    if letter == ' ': #spaces
+        encryptedMessage.append(letter)
+    else:
+        encryptedMessage.append(invkeys[letter])
+print("Encrypted Message:", ''.join(encryptedMessage)) #join is used to put list inot string
