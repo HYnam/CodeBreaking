@@ -24,14 +24,17 @@ invkeys = {} #use dictionary for inverse letter mapping, you could use inverse s
 for index, letter in enumerate(letters):
     # cypher setup
     if index < totalLetters: #lowercase
+        # Dictionary for encryption 
         letter = letters[index]
         keys[letter] = letters[(index + offset) % 26]
-        invkeys[letter] = letters[index % 26]
+        # Dictionary for decryption 
+        invkeys = {val: key for key, val in keys.items()}
     else: #uppercase
+        # Dictionary for encryption 
         keys[letter] = letters[(index + offset) % 26 + 26]
-        invkeys[letter] = letters[index % 26 + 26]
+        # Dictionary for decryption
+        invkeys = {val: key for key, val in keys.items()}
 print("Cypher Dict", keys)
-print("Original Dict", invkeys)
 
 #encrypt
 encryptedMessage = []
