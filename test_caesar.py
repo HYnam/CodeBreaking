@@ -26,12 +26,11 @@ for index, letter in enumerate(letters):
     if index < totalLetters: #lowercase
         letter = letters[index]
         keys[letter] = letters[(index + offset) % 26]
-        print(letters[index] + ":" + keys[letter])
+        #print(letters[index] + ":" + keys[letter])
     else: #uppercase
-        letter = letters.isupper()
-        keys[letter] = letters[(index + offset) % 26]
-        print(letters[index] + ":" + keys[letter])
-       
+        keys[letter] = letters[(index + offset) % 26 + 26]
+        #print(letters[index] + ":" + keys[letter])
+print("Cypher Dict", keys)
 
 #encrypt
 encryptedMessage = []
