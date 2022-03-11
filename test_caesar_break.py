@@ -10,6 +10,7 @@ from collections import Counter
 import string
 
 message = "Zyp cpxpxmpc ez wzzv fa le esp delcd lyo yze ozhy le jzfc qppe Ehz ypgpc rtgp fa hzcv Hzcv rtgpd jzf xplytyr lyo afcazdp lyo wtqp td pxaej hteszfe te Escpp tq jzf lcp wfnvj pyzfrs ez qtyo wzgp cpxpxmpc te td espcp lyo ozye esczh te lhlj Depaspy Slhvtyr" 
+#message = "Phhw Ph Lq Wkh Jdughq" # For testing 
 
 #frequency of each letter
 letter_counts = Counter(message)
@@ -29,7 +30,7 @@ print("Max Ocurring Letter:", maxLetter)
 #predict shift
 #assume max letter is 'e'
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-shift = 15  #COMPUTE SHIFT HERE (hardcode)
+shift = (ord('e') - ord(maxLetter)) % 26
 print("Predicted Shift:", shift)
 
 totalLetters = 26
