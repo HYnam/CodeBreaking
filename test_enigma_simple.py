@@ -39,4 +39,7 @@ print("Decoded Message:", engine.encipher(secret))
 ShakesHorribleMessage = "Vxye ajgh D yf? Ptn uluo yjgco L ws nznde czidn. Bsj ccj qdbk qjph wpw ypxvu!"
 
 #Write code to decrypt message above
-#INSERT CODE HERE
+engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
+                                plugs="AA BB CC DD")
+print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
