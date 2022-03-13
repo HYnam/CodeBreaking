@@ -10,6 +10,7 @@ Created on Tue Feb  5 12:17:02 2019
 
 @author: uqscha22
 """
+from email import message
 import enigma
 import rotor
 
@@ -27,7 +28,11 @@ print("Encoded Message:", secret)
 
 #Write code to decrypt message below
 #HINT: Reuse the code above to do it. You do not need to write a decrypt function.
-#INSERT CODE HERE
+engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
+                                plugs="AA BB CC DD EE")
+
+print("Decoded Message:", engine.encipher(secret))
 
 
 #Part b)
