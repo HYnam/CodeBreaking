@@ -41,5 +41,4 @@ ShakesHorribleMessage = "Vxye ajgh D yf? Ptn uluo yjgco L ws nznde czidn. Bsj cc
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
                                 rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",
                                 plugs="AA BB CC DD")
-                                
 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
