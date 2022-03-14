@@ -13,6 +13,7 @@ Created on Tue Feb  5 12:17:02 2019
 import string
 import enigma
 import rotor
+import time
 
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 capitalLetters = letters[-26:]
