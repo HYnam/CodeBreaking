@@ -10,7 +10,6 @@ Created on Tue Feb  5 12:17:02 2019
 
 @author: uqscha22
 """
-from email import message
 import enigma
 import rotor
 
@@ -40,6 +39,7 @@ ShakesHorribleMessage = "Vxye ajgh D yf? Ptn uluo yjgco L ws nznde czidn. Bsj cc
 
 #Write code to decrypt message above
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",
                                 plugs="AA BB CC DD")
+                                
 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
