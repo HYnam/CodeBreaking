@@ -32,7 +32,8 @@ engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
 for engine.rotor1 in letters:
     for engine.rotor2 in letters:
         for engine.rotor3 in letters: 
-            #startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position 
+            startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position
+            key = startPos  #Set starting position 
             decrypt = engine.encipher(crib)
             print("Decoded Message:",decrypt)
 
