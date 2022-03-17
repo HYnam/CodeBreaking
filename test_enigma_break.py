@@ -20,16 +20,24 @@ capitalLetters = letters[-26:]
 #print(capitalLetters)
 
 ShakesHorribleMessage = "Xm xti ca idjmq Ecokta Rkhoxuu! Kdiu gm xex oft uz yjwenv qik parwc hs emrvm sfzu qnwfg. Gvgt vz vih rlt ly cnvpym xtq sgfvk jp jatrl irzru oubjo odp uso nsty jm gfp lkwrx pliv ojfo rl rylm isn aueuom! Gdwm Qopjmw!"
-crib = ""
-crib_substring = "Hail Shakes!"
-print(crib_substring)
+crib = "Hail Shakes!"
+crib_substring = ""
+print(crib)
 
 ##Break the code via brute force search
-#INSERT CODE HERE
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="DEF",
-                                plugs="AA DD EE FF")
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",
+                                plugs="AA BB CC DD")
+
+for engine.rotor1 in letters:
+    for engine.rotor2 in letters:
+        for engine.rotor3 in letters: 
+            #startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position 
+            decrypt = engine.encipher(crib)
+            print("Decoded Message:",decrypt)
+
+            if decrypt == crib:
+                print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
                                 
 #Print the Decoded message
-#INSERT CODE HERE
-print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
+#print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
