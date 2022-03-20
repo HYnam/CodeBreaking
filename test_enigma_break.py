@@ -29,7 +29,9 @@ engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
                                 rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
                                 plugs="AA BB CC DD")
 
-counting = 0
+counting = 0    # Initial counter counting 
+start = time.monotonic()    # beginning of the progress
+
 for engine.rotor1 in capitalLetters:
     for engine.rotor2 in capitalLetters:
         for engine.rotor3 in capitalLetters: 
@@ -43,3 +45,6 @@ for engine.rotor1 in capitalLetters:
                 print("Count:", counting)   # Print out how many counts needed to decrypt
                 #Print the Decoded message
                 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
+
+end = time.monotonic()  # Get the value of the clock after decrypt
+print("Time elapsed during the process:", end - start)  # Time running in sec
