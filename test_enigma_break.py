@@ -26,19 +26,17 @@ print(crib)
 
 ##Break the code via brute force search
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="AAA",
                                 plugs="AA BB CC DD")
 
-for engine.rotor1 in letters:
-    for engine.rotor2 in letters:
-        for engine.rotor3 in letters: 
-            startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position
-            key = startPos  #Set starting position 
-            decrypt = engine.encipher(crib)
+for engine.rotor1 in capitalLetters:
+    for engine.rotor2 in capitalLetters:
+        for engine.rotor3 in capitalLetters: 
+            #startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position
+            #key = startPos  #Set starting position 
+            decrypt = engine.encipher(ShakesHorribleMessage[-201:])
             print("Decoded Message:",decrypt)
 
             if decrypt == crib:
+                #Print the Decoded message
                 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
-                                
-#Print the Decoded message
-#print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
