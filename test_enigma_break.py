@@ -26,9 +26,10 @@ print(crib)
 
 ##Break the code via brute force search
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="AAA",
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
                                 plugs="AA BB CC DD")
 
+counting = 0
 for engine.rotor1 in capitalLetters:
     for engine.rotor2 in capitalLetters:
         for engine.rotor3 in capitalLetters: 
@@ -36,7 +37,9 @@ for engine.rotor1 in capitalLetters:
             #key = startPos  #Set starting position 
             decrypt = engine.encipher(ShakesHorribleMessage[-201:])
             print("Decoded Message:",decrypt)
+            counting =+ 1   # Add 1 to counter after which try of decrypt
 
             if decrypt == crib:
+                print("Count:", counting)   # Print out how many counts needed to decrypt
                 #Print the Decoded message
                 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
