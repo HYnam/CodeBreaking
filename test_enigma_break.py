@@ -37,12 +37,13 @@ for rotor1 in capitalLetters:
         for rotor3 in capitalLetters: 
             decrypt = engine.encipher(ShakesHorribleMessage[-201:])
             print("Decoded Message:",decrypt)
-            counting =+ 1   # Add 1 to counter after which try of decrypt
+            counting += 1   # Add 1 to counter after which try of decrypt
 
 if decrypt == crib:
     print("Count:", counting)   # Print out how many counts needed to decrypt
     #Print the Decoded message
     print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
+
 
 end = time.monotonic()  # Get the value of the clock after decrypt
 print("Time elapsed during the process:", end - start)  # Time running in sec
