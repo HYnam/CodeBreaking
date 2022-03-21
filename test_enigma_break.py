@@ -32,19 +32,17 @@ engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
 counting = 0    # Initial counter counting 
 start = time.monotonic()    # beginning of the progress
 
-for engine.rotor1 in capitalLetters:
-    for engine.rotor2 in capitalLetters:
-        for engine.rotor3 in capitalLetters: 
-            #startPos = engine.rotor1 + engine.rotor2 + engine.rotor3    # Generate a possible rotor start position
-            #key = startPos  #Set starting position 
+for rotor1 in capitalLetters:
+    for rotor2 in capitalLetters:
+        for rotor3 in capitalLetters: 
             decrypt = engine.encipher(ShakesHorribleMessage[-201:])
             print("Decoded Message:",decrypt)
             counting =+ 1   # Add 1 to counter after which try of decrypt
 
-            if decrypt == crib:
-                print("Count:", counting)   # Print out how many counts needed to decrypt
-                #Print the Decoded message
-                print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
+if decrypt == crib:
+    print("Count:", counting)   # Print out how many counts needed to decrypt
+    #Print the Decoded message
+    print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
 
 end = time.monotonic()  # Get the value of the clock after decrypt
 print("Time elapsed during the process:", end - start)  # Time running in sec
