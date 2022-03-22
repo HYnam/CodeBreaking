@@ -39,7 +39,7 @@ for rotor1 in capitalLetters:
             #print("Decoded Message:",decrypt)
             count += 1   # Add 1 to counter after which try of decrypt
 
-            if decrypt.find("Hail Shakes!") and decrypt.find("Hail Shakes!") != -1: 
+            if decrypt.find("Hail Shakes!") != -1: 
                 print("Count:", count)   # Print out how many counts needed to decrypt
                 #Print the Decoded message
                 print("Final:",decrypt)
