@@ -24,12 +24,14 @@ crib = "Hail Shakes!"
 crib_substring = ""
 print(crib)
 
+print(ShakesHorribleMessage.find("Gdwm Qopjmw!"))
+
 ##Break the code via brute force search
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
                                 rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
                                 plugs="AA BB CC DD")
 
-counting = 0    # Initial counter counting 
+count = 0    # Initial counter counting 
 start = time.monotonic()    # beginning of the progress
 
 for rotor1 in capitalLetters:
@@ -37,13 +39,20 @@ for rotor1 in capitalLetters:
         for rotor3 in capitalLetters: 
             decrypt = engine.encipher(ShakesHorribleMessage[-201:])
             print("Decoded Message:",decrypt)
-            counting += 1   # Add 1 to counter after which try of decrypt
+            count += 1   # Add 1 to counter after which try of decrypt
 
-if decrypt == crib:
+            if decrypt.find("Hail Shakes!") and decrypt.find("Hail Shakes!") != -1:
+                print("Count:", count)   # Print out how many counts needed to decrypt
+                #Print the Decoded message
+                print("Final:",decrypt)
+                         
+            
+"""
+if decrypt[202:] == crib:
     print("Count:", counting)   # Print out how many counts needed to decrypt
     #Print the Decoded message
     print("Decoded Message:",engine.encipher(ShakesHorribleMessage))
-
+"""
 
 end = time.monotonic()  # Get the value of the clock after decrypt
 print("Time elapsed during the process:", end - start)  # Time running in sec
