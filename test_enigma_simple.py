@@ -29,7 +29,7 @@ print("Encoded Message:", secret)
 #HINT: Reuse the code above to do it. You do not need to write a decrypt function.
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
                                 rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
-                                plugs="AA BB CC DD EE")
+                                plugs="AA BB CC DD EE")     # use the same rotor setting 
 
 print("Decoded Message:", engine.encipher(secret))
 
@@ -39,6 +39,7 @@ ShakesHorribleMessage = "Vxye ajgh D yf? Ptn uluo yjgco L ws nznde czidn. Bsj cc
 
 #Write code to decrypt message above
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",
-                                plugs="AA BB CC DD")
+                                rotor.ROTOR_II, rotor.ROTOR_III, key="SSC",     # Window position = SSC
+                                plugs="AA BB CC DD")    # No plugboards used 
+
 print("Decoded Message:",engine.encipher(ShakesHorribleMessage))

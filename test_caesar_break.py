@@ -13,6 +13,7 @@ message = "Zyp cpxpxmpc ez wzzv fa le esp delcd lyo yze ozhy le jzfc qppe Ehz yp
 #message = "Phhw Ph Lq Wkh Jdughq" # For testing 
 
 #frequency of each letter
+# letter = key; count = value
 letter_counts = Counter(message)
 print(letter_counts)    # Print the count of each element in string
 
@@ -30,7 +31,7 @@ print("Max Ocurring Letter:", maxLetter)
 #predict shift
 #assume max letter is 'e'
 letters = string.ascii_letters #contains 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-shift = (ord('e') - ord(maxLetter)) % 26
+shift = (ord('e') - ord(maxLetter)) % 26    # ord() return unicode code point 
 print("Predicted Shift:", shift)
 
 totalLetters = 26

@@ -27,7 +27,7 @@ print(crib)
 ##Break the code via brute force search
 engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
                                 rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
-                                plugs="AA BB CC DD")
+                                plugs="AA BB CC DD")    # Initial rotor setting without using plugboards
 
 count = 0    # Initial counter counting 
 start = time.monotonic()    # beginning of the progress
