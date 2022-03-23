@@ -58,4 +58,24 @@ Part 2d Estimate time taken for 1940s computer
 
 96,698 / 5000
 = 19.3396 sec 
+
+
+Part 2e:
+
+Five rotors have 65780 possible combinations (key)
+158 million combinations of 10 pairs of 26 letters. (plugboard)
+
+Time elapsed during the process: 17.25
+Count: 16113
+16113 / 17.25 = 934.0869565217391 millisecond
+
+934.0869565217391 * 65780 * 158000000
+= 9,708,189,920,000,000 / 1000      # Convert to sec
+= 9,708,189,920,000 
+
+# Cal how much longer
+9,708,189,920,000 - 17.25
+= 9,708,189,919,982.75 / 60     # Convert to min
+= 161,803,165,333.0458 / 60     # Convert to hour
+= 2,696,719,422.217431
 """
