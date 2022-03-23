@@ -48,3 +48,14 @@ for rotor1 in capitalLetters:
 
 end = time.monotonic()  # Get the value of the clock after decrypt
 print("Time elapsed during the process:", end - start)  # Time running in sec
+
+"""
+Part 2d Estimate time taken for 1940s computer
+
+15 + 16113 * 5 + 16112 * 1 + 1 * 4 + 2
+= 15 + 80,565 + 16112 + 4 + 2
+= 96,698
+
+96,698 / 5000
+= 19.3396 sec 
+"""
