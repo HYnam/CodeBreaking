@@ -25,17 +25,21 @@ crib_substring = ""
 print(crib)
 
 ##Break the code via brute force search
-engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
-                                rotor.ROTOR_II, rotor.ROTOR_III, key="ABC",
-                                plugs="AA BB CC DD")    # Initial rotor setting without using plugboards
+
 
 count = 0    # Initial counter counting 
 start = time.monotonic()    # beginning of the progress
 
 for rotor1 in capitalLetters:
     for rotor2 in capitalLetters:
-        for rotor3 in capitalLetters: 
-            decrypt = engine.encipher(ShakesHorribleMessage[-201:])
+        for rotor3 in capitalLetters:
+            key = rotor1 + rotor2 + rotor3 
+            engine = enigma.Enigma(rotor.ROTOR_Reflector_A, rotor.ROTOR_I,
+                                rotor.ROTOR_II, rotor.ROTOR_III, key,
+                                plugs="AA BB CC DD")    # Initial rotor setting without using plugboards
+
+            decrypt = engine.encipher(ShakesHorribleMessage)
+            #print(ShakesHorribleMessage[-201:])
             #print("Decoded Message:",decrypt)
             count += 1   # Add 1 to counter after which try of decrypt
 
@@ -43,6 +47,7 @@ for rotor1 in capitalLetters:
                 print("Count:", count)   # Print out how many counts needed to decrypt
                 #Print the Decoded message
                 print("Final:",decrypt)
+                print(key)
                 break       
                
 
@@ -63,7 +68,7 @@ Part 2d Estimate time taken for 1940s computer
 Part 2e:
 
 Five rotors have 60 (5 * 4 * 3) possible combinations (key)
-n(n+1) / 2 = 25(26) / 2 = 325 ways (plugboard)
+n(n+1) / 2 = 25(26) / 2 = 325 ways (plugboard)  26!/(6!*2)
 
 Time elapsed during the process: 17.25
 Count: 16113
@@ -77,4 +82,7 @@ Count: 16113
 18,214.69565217391 - 17.25
 = 18,197.44565217391 / 60   # Convert to min
 = 303.2907608695652 mins
+
+Part 3
+attack pearl harbour december seven
 """
